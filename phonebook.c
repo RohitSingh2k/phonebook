@@ -181,6 +181,7 @@ void list_record()
         printf("\t\t\t\t******************************************************************************\n\n\n");
         printf("  NAME\t\t\t\t   COUNTRY CODE\t\t    PHONE NO\t\t    SEX\t\t             EMAIL\n");
         printf("---------------------------------------------------------------------------------------------------------------------------------------------\n");
+        // fseek(fp,-(sizeof(p)*2L),2);
         while (fread(&p, sizeof(p), 1, fp) == 1)
         {
             int i;
@@ -379,10 +380,6 @@ void remove_all()
     char choice;
     system("clear");
     remove("./phonebook_db");
-    // printf("Do you want to delete all contacts [Y/N] : ");
-    // scanf("%c",&choice);
-    // if(choice == 'y' || choice == 'Y') 
-    // else return;
     printf("All data in the phonebook deleted successfully\n");
     printf("Press any key to continue ... \n");
 }
