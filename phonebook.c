@@ -144,9 +144,12 @@ void add_person()
 void take_input(person *p)
 {
     system("clear");
-
+    // This getchar is for taking \n occured by previous functions.
+    // So that scanset in scanf will work properly.
+    getchar();
     printf("Enter name : ");
-    scanf("%s",p->name);
+    // Here we are using scanset '^' - >  until get
+    scanf("%[^\n]s",p->name);
 
     printf("Enter country code : ");
     scanf("%s",p->country_code); 
